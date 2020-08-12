@@ -1,0 +1,6 @@
+class TreeNode:
+ def __init__(self, data,parent = None,left=None, right=None):
+ self.data = data #contains current score
+ self.left = left #points to the next node after win
+ self.right = right #points to the next node after lose
+ self.parent = parent #points to the previous node

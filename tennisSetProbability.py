@@ -100,12 +100,12 @@ def setGeneral(s, u, v=0, w=0, tb=1):
             if t < 1:   continue
             if t % 2 == 0:
                 final = h
-                sGames = t/2
-                rGames = sGames - 1
+                sGames = int(t/2)
+                rGames = int(sGames - 1)
             else:
                 final = g
-                sGames = (t-1)/2
-                rGames = (t-1)/2
+                sGames = int((t-1)/2)
+                rGames = int((t-1)/2)
             pOutcome = setOutcome(final, sGames, rGames, v, g, h)
             key = '6' + str(i)
             outcomes[key] = pOutcome
@@ -117,23 +117,23 @@ def setGeneral(s, u, v=0, w=0, tb=1):
             if t < 1:   continue
             if t % 2 == 0:
                 final = 1-h
-                sGames = t/2
-                rGames = sGames - 1
+                sGames = int(t/2)
+                rGames = int(sGames - 1)
             else:
                 final = 1-g
-                sGames = (t-1)/2
-                rGames = (t-1)/2
+                sGames = int((t-1)/2)
+                rGames = int((t-1)/2)
             pOutcome = setOutcome(final, sGames, rGames, w, (1-g), (1-h))
             key = str(i) + '6'
             outcomes[key] = pOutcome       
         ## prob of getting to 5-5
         t = 10 - v - w
         if t % 2 == 0:
-            sGames = t/2
-            rGames = t/2
+            sGames = int(t/2)
+            rGames = int(t/2)
         else:
-            sGames = (t-1)/2 + 1
-            rGames = (t-1)/2
+            sGames = int((t-1)/2 + 1)
+            rGames = int((t-1)/2)
         f = setOutcome(1, sGames, rGames, v, g, h)
         if tb == 1:
             outcomes['75'] = f*g*h
