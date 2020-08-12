@@ -26,6 +26,8 @@ def matchGeneral(e, v=0, w=0, s=3):
     remain = s - v - w
     if left > remain:   return 0
     win = 0
+    left = int(left)
+    e = e[0] #contains winning prob and all probabilities
     for i in range(left, (remain+1)):
         add = ch((i-1), (left-1))*(e**(left-1))*((1-e)**(i-left))*e
         win += add

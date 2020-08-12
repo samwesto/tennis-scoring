@@ -82,6 +82,8 @@ def tiebreakProb(s, t, v=0, w=0, p=7):
                 final = s
                 svc -= 1
         pOutcome = 0
+        svc = int(svc)
+        ret = int(ret)
         for j in range(svc+1):
             for k in range(ret+1):
                 if (j+k) == (p - 1 - v):
@@ -120,6 +122,8 @@ def tiebreakProb(s, t, v=0, w=0, p=7):
     ## probability of getting to (p-1)-(p-1) (e.g. 6-6)
     final = 1
     x = 0
+    svc = int(svc)
+    ret = int(ret)
     for j in range(svc+1):
         for k in range(ret+1):
             if (j+k) == (p - 1 - v):
